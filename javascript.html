@@ -1,0 +1,48 @@
+const products = [
+  { name: 'Mentos Gum', price: 1.00 },
+  // Add more products here as needed
+];
+
+let cartItems = [];
+let totalPrice = 0.00;
+
+function buyGum(productName) {
+  const product = products.find(item => item.name === productName);
+  if (!product) {
+    return;
+  }
+  cartItems.push(product);
+  totalPrice += product.price;
+  updateCart();
+}
+
+function updateCart() {
+  const cartList = document.getElementById('cart-items');
+  cartList.innerHTML = '';
+
+  cartItems.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+    cartList.appendChild(listItem);
+  });
+
+  const totalPriceElement = document.getElementById('total-price');
+  totalPriceElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+}
+
+function checkout() {
+  const fullName = prompt('Please enter your first and last name:');
+  if (fullName) {
+    alert(`Thank you, ${fullName}, for your purchase! Total amount: $${totalPrice.toFixed(2)}`);
+    // Simulate purchase tracking (you can save this data to a server/database)
+    console.log({
+      fullName,
+      items: cartItems,
+      totalAmount: totalPrice.toFixed(2)
+    });
+    cartItems = [];
+    totalPrice = 0.00;
+    updateCart();
+  }
+}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gum Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gum Shop</h1>
+  </header>
+
+  <main>
+    <section id="products">
+      <h2>Available Gum Flavors</h2>
+      <div class="product">
+        <img src="mentos.jpg" alt="Mentos Gum">
+        <h3>Mentos Gum</h3>
+        <p>Price: $1.00</p>
+        <button class="buy-button" onclick="buyGum('Mentos Gum')">Buy Now</button>
+      </div>
+      <!-- Add more gum products as needed -->
+      <p class="coming-soon">More varieties coming soon!</p>
+    </section>
+
+    <section id="cart">
+      <h2>Your Cart</h2>
+      <ul id="cart-items">
+        <!-- Cart items will be added here dynamically -->
+      </ul>
+      <p id="total-price">Total Price: $0.00</p>
+      <button class="buy-button" onclick="checkout()">Checkout</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Website owned by <div Atharv="" Sharma=""></div></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
